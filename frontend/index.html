@@ -1,0 +1,1403 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Marketing NLP Intelligence Lab</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- =========================================
+         SIDEBAR
+    ========================================== -->
+
+    <aside class="sidebar" id="sidebar">
+
+        <div class="brand">
+
+            <div class="brand-icon">
+                <i class="fa-solid fa-chart-line"></i>
+            </div>
+
+            <div class="brand-text">
+                <strong>Marketing NLP</strong>
+                <span>Intelligence Lab</span>
+            </div>
+
+        </div>
+
+
+        <div class="sidebar-section">
+
+            <span class="sidebar-label">
+                ANALYTICS
+            </span>
+
+
+            <button
+                class="menu-item active"
+                data-section="overview"
+            >
+                <i class="fa-solid fa-grid-2"></i>
+                <span>Overview</span>
+            </button>
+
+
+            <button
+                class="menu-item"
+                data-section="reviews"
+            >
+                <i class="fa-regular fa-comments"></i>
+                <span>Review Explorer</span>
+            </button>
+
+
+            <button
+                class="menu-item"
+                data-section="sentiment"
+            >
+                <i class="fa-solid fa-face-smile"></i>
+                <span>Sentiment</span>
+            </button>
+
+
+            <button
+                class="menu-item"
+                data-section="topics"
+            >
+                <i class="fa-solid fa-layer-group"></i>
+                <span>Topics</span>
+            </button>
+
+
+            <button
+                class="menu-item"
+                data-section="keywords"
+            >
+                <i class="fa-solid fa-key"></i>
+                <span>Keywords</span>
+            </button>
+
+
+            <button
+                class="menu-item"
+                data-section="insights"
+            >
+                <i class="fa-solid fa-lightbulb"></i>
+                <span>Business Insights</span>
+            </button>
+
+        </div>
+
+
+        <div class="sidebar-section">
+
+            <span class="sidebar-label">
+                DATA
+            </span>
+
+
+            <button
+                class="menu-item"
+                data-section="dataset"
+            >
+                <i class="fa-solid fa-database"></i>
+                <span>Dataset</span>
+            </button>
+
+
+            <button
+                class="menu-item"
+                data-section="analyzer"
+            >
+                <i class="fa-solid fa-magnifying-glass-chart"></i>
+                <span>Review Analyzer</span>
+            </button>
+
+        </div>
+
+
+        <div class="sidebar-bottom">
+
+            <div class="connection-status">
+
+                <span class="status-dot" id="statusDot"></span>
+
+                <div>
+                    <strong id="statusText">
+                        Checking connection
+                    </strong>
+
+                    <small>
+                        NLP Engine
+                    </small>
+                </div>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =========================================
+         MAIN AREA
+    ========================================== -->
+
+    <div class="main-area">
+
+
+        <!-- TOP BAR -->
+
+        <header class="topbar">
+
+            <button
+                class="hamburger"
+                id="hamburger"
+                aria-label="Open navigation"
+            >
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+
+            <div class="breadcrumb">
+
+                <span>Marketing NLP</span>
+
+                <i class="fa-solid fa-chevron-right"></i>
+
+                <strong id="breadcrumbTitle">
+                    Overview
+                </strong>
+
+            </div>
+
+
+            <div class="topbar-actions">
+
+                <button
+                    class="icon-button"
+                    title="Refresh data"
+                    id="refreshButton"
+                >
+                    <i class="fa-solid fa-rotate"></i>
+                </button>
+
+
+                <div class="profile">
+
+                    <div class="profile-avatar">
+                        TM
+                    </div>
+
+                    <div class="profile-info">
+
+                        <strong>
+                            Marketing Analyst
+                        </strong>
+
+                        <span>
+                            NLP Workspace
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- CONTENT -->
+
+        <main class="content">
+
+
+            <!-- =====================================
+                 OVERVIEW
+            ====================================== -->
+
+            <section
+                class="page-section active"
+                id="overview"
+            >
+
+                <div class="page-header">
+
+                    <div>
+
+                        <div class="eyebrow">
+                            CUSTOMER VOICE INTELLIGENCE
+                        </div>
+
+                        <h1>
+                            Marketing Overview
+                        </h1>
+
+                        <p>
+                            Understand what customers are saying
+                            about your products and brand.
+                        </p>
+
+                    </div>
+
+
+                    <button
+                        class="primary-button"
+                        data-section-target="dataset"
+                    >
+                        <i class="fa-solid fa-upload"></i>
+                        Load Dataset
+                    </button>
+
+                </div>
+
+
+                <!-- KPI CARDS -->
+
+                <div class="kpi-grid">
+
+
+                    <div class="kpi-card">
+
+                        <div class="kpi-top">
+
+                            <span>
+                                Total Reviews
+                            </span>
+
+                            <div class="kpi-icon blue">
+                                <i class="fa-regular fa-comments"></i>
+                            </div>
+
+                        </div>
+
+                        <strong id="totalReviews">
+                            —
+                        </strong>
+
+                        <small>
+                            Reviews analyzed
+                        </small>
+
+                    </div>
+
+
+                    <div class="kpi-card">
+
+                        <div class="kpi-top">
+
+                            <span>
+                                Positive Sentiment
+                            </span>
+
+                            <div class="kpi-icon green">
+                                <i class="fa-solid fa-face-smile"></i>
+                            </div>
+
+                        </div>
+
+                        <strong id="positivePercentage">
+                            —
+                        </strong>
+
+                        <small>
+                            Customer sentiment
+                        </small>
+
+                    </div>
+
+
+                    <div class="kpi-card">
+
+                        <div class="kpi-top">
+
+                            <span>
+                                Negative Sentiment
+                            </span>
+
+                            <div class="kpi-icon red">
+                                <i class="fa-solid fa-face-frown"></i>
+                            </div>
+
+                        </div>
+
+                        <strong id="negativePercentage">
+                            —
+                        </strong>
+
+                        <small>
+                            Potential pain points
+                        </small>
+
+                    </div>
+
+
+                    <div class="kpi-card">
+
+                        <div class="kpi-top">
+
+                            <span>
+                                Average Rating
+                            </span>
+
+                            <div class="kpi-icon orange">
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+
+                        </div>
+
+                        <strong id="averageRating">
+                            —
+                        </strong>
+
+                        <small>
+                            Out of 5
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CHART ROW -->
+
+                <div class="dashboard-grid">
+
+
+                    <div class="panel large-panel">
+
+                        <div class="panel-header">
+
+                            <div>
+
+                                <h2>
+                                    Sentiment Distribution
+                                </h2>
+
+                                <p>
+                                    Overall customer opinion
+                                </p>
+
+                            </div>
+
+                            <button class="more-button">
+                                <i class="fa-solid fa-ellipsis"></i>
+                            </button>
+
+                        </div>
+
+
+                        <div class="chart-container">
+
+                            <canvas
+                                id="sentimentChart"
+                            ></canvas>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="panel">
+
+                        <div class="panel-header">
+
+                            <div>
+
+                                <h2>
+                                    Rating Distribution
+                                </h2>
+
+                                <p>
+                                    Customer ratings
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="chart-container small-chart">
+
+                            <canvas
+                                id="ratingChart"
+                            ></canvas>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CUSTOMER VOICE -->
+
+                <div class="dashboard-grid">
+
+
+                    <div class="panel">
+
+                        <div class="panel-header">
+
+                            <div>
+
+                                <h2>
+                                    Customer Voice
+                                </h2>
+
+                                <p>
+                                    Representative reviews
+                                </p>
+
+                            </div>
+
+                            <button
+                                class="text-button"
+                                data-section-target="reviews"
+                            >
+                                View all
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+
+                        </div>
+
+
+                        <div id="overviewReviews">
+
+                            <div class="empty-state">
+
+                                <i class="fa-regular fa-comments"></i>
+
+                                <p>
+                                    Load a dataset to see customer reviews.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="panel">
+
+                        <div class="panel-header">
+
+                            <div>
+
+                                <h2>
+                                    Quick Insights
+                                </h2>
+
+                                <p>
+                                    Marketing signals
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div
+                            id="quickInsights"
+                            class="insight-list"
+                        >
+
+                            <div class="empty-state">
+
+                                <i class="fa-solid fa-lightbulb"></i>
+
+                                <p>
+                                    Insights will appear after analysis.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =====================================
+                 REVIEWS
+            ====================================== -->
+
+            <section
+                class="page-section"
+                id="reviews"
+            >
+
+                <div class="page-header">
+
+                    <div>
+
+                        <div class="eyebrow">
+                            CUSTOMER VOICE
+                        </div>
+
+                        <h1>
+                            Review Explorer
+                        </h1>
+
+                        <p>
+                            Search and filter customer feedback.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="panel">
+
+                    <div class="filter-bar">
+
+                        <div class="search-box">
+
+                            <i class="fa-solid fa-magnifying-glass"></i>
+
+                            <input
+                                type="text"
+                                id="reviewSearch"
+                                placeholder="Search reviews..."
+                            >
+
+                        </div>
+
+
+                        <select id="sentimentFilter">
+
+                            <option value="all">
+                                All Sentiments
+                            </option>
+
+                            <option value="Positive">
+                                Positive
+                            </option>
+
+                            <option value="Neutral">
+                                Neutral
+                            </option>
+
+                            <option value="Negative">
+                                Negative
+                            </option>
+
+                        </select>
+
+
+                        <select id="ratingFilter">
+
+                            <option value="all">
+                                All Ratings
+                            </option>
+
+                            <option value="5">
+                                5 Stars
+                            </option>
+
+                            <option value="4">
+                                4 Stars
+                            </option>
+
+                            <option value="3">
+                                3 Stars
+                            </option>
+
+                            <option value="2">
+                                2 Stars
+                            </option>
+
+                            <option value="1">
+                                1 Star
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="table-wrapper">
+
+                        <table>
+
+                            <thead>
+
+                                <tr>
+
+                                    <th>
+                                        Customer
+                                    </th>
+
+                                    <th>
+                                        Product
+                                    </th>
+
+                                    <th>
+                                        Rating
+                                    </th>
+
+                                    <th>
+                                        Review
+                                    </th>
+
+                                    <th>
+                                        Sentiment
+                                    </th>
+
+                                    <th>
+                                        Score
+                                    </th>
+
+                                </tr>
+
+                            </thead>
+
+                            <tbody id="reviewTableBody">
+
+                                <tr>
+
+                                    <td
+                                        colspan="6"
+                                        class="table-empty"
+                                    >
+                                        Load a dataset to see reviews.
+                                    </td>
+
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =====================================
+                 SENTIMENT
+            ====================================== -->
+
+            <section
+                class="page-section"
+                id="sentiment"
+            >
+
+                <div class="page-header">
+
+                    <div>
+
+                        <div class="eyebrow">
+                            NLP ANALYSIS
+                        </div>
+
+                        <h1>
+                            Sentiment Intelligence
+                        </h1>
+
+                        <p>
+                            Understand the emotional direction
+                            of customer feedback.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="dashboard-grid">
+
+                    <div class="panel">
+
+                        <div class="panel-header">
+
+                            <div>
+
+                                <h2>
+                                    Sentiment Overview
+                                </h2>
+
+                                <p>
+                                    Positive, neutral and negative feedback
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                        <div
+                            id="sentimentBreakdown"
+                            class="metric-list"
+                        >
+
+                            <div class="empty-state">
+
+                                <i class="fa-solid fa-chart-pie"></i>
+
+                                <p>
+                                    Analyze a dataset to see sentiment.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="panel">
+
+                        <div class="panel-header">
+
+                            <div>
+
+                                <h2>
+                                    Sentiment Score
+                                </h2>
+
+                                <p>
+                                    VADER compound score
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="score-explanation">
+
+                            <div class="score-scale">
+
+                                <span>
+                                    -1
+                                </span>
+
+                                <div class="score-bar">
+
+                                    <div class="score-marker"></div>
+
+                                </div>
+
+                                <span>
+                                    +1
+                                </span>
+
+                            </div>
+
+
+                            <div class="score-labels">
+
+                                <span>Negative</span>
+
+                                <span>Neutral</span>
+
+                                <span>Positive</span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =====================================
+                 TOPICS
+            ====================================== -->
+
+            <section
+                class="page-section"
+                id="topics"
+            >
+
+                <div class="page-header">
+
+                    <div>
+
+                        <div class="eyebrow">
+                            CUSTOMER THEMES
+                        </div>
+
+                        <h1>
+                            Topic Intelligence
+                        </h1>
+
+                        <p>
+                            Discover recurring themes in customer feedback.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="dashboard-grid">
+
+                    <div class="panel large-panel">
+
+                        <div class="panel-header">
+
+                            <div>
+
+                                <h2>
+                                    Top Topic Volume
+                                </h2>
+
+                                <p>
+                                    Customer mentions per theme
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                        <div class="chart-container">
+
+                            <canvas id="topicChart"></canvas>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="panel">
+
+                        <div class="panel-header">
+
+                            <div>
+
+                                <h2>
+                                    Topic Summary
+                                </h2>
+
+                                <p>
+                                    Overview of identified topics
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                        <div id="topicSummary" class="insight-list">
+
+                            <div class="empty-state">
+
+                                <i class="fa-solid fa-layer-group"></i>
+
+                                <p>
+                                    Analyze a dataset to discover recurring topics.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div id="topicCards" class="dashboard-grid"></div>
+
+            </section>
+
+
+            <!-- =====================================
+                 KEYWORDS
+            ====================================== -->
+
+            <section
+                class="page-section"
+                id="keywords"
+            >
+
+                <div class="page-header">
+
+                    <div>
+
+                        <div class="eyebrow">
+                            VOCABULARY INTELLIGENCE
+                        </div>
+
+                        <h1>
+                            Keyword Intelligence
+                        </h1>
+
+                        <p>
+                            Identify the words customers use most frequently.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="dashboard-grid">
+
+                    <div class="panel">
+
+                        <div class="panel-header">
+
+                            <div>
+
+                                <h2>
+                                    Positive Keywords
+                                </h2>
+
+                                <p>
+                                    Words associated with positive feedback
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                        <div
+                            id="positiveKeywords"
+                            class="keyword-cloud"
+                        >
+
+                            <span class="keyword-placeholder">
+                                Analyze a dataset to generate keywords.
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="panel">
+
+                        <div class="panel-header">
+
+                            <div>
+
+                                <h2>
+                                    Negative Keywords
+                                </h2>
+
+                                <p>
+                                    Words associated with negative feedback
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                        <div
+                            id="negativeKeywords"
+                            class="keyword-cloud"
+                        >
+
+                            <span class="keyword-placeholder">
+                                Analyze a dataset to generate keywords.
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =====================================
+                 INSIGHTS
+            ====================================== -->
+
+            <section
+                class="page-section"
+                id="insights"
+            >
+
+                <div class="page-header">
+
+                    <div>
+
+                        <div class="eyebrow">
+                            DECISION SUPPORT
+                        </div>
+
+                        <h1>
+                            Business Insights
+                        </h1>
+
+                        <p>
+                            Translate NLP results into marketing decisions.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    id="businessInsights"
+                    class="insights-grid"
+                >
+
+                    <div class="empty-state panel">
+
+                        <i class="fa-solid fa-lightbulb"></i>
+
+                        <h3>
+                            No insights yet
+                        </h3>
+
+                        <p>
+                            Analyze customer reviews to generate
+                            marketing insights.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =====================================
+                 DATASET
+            ====================================== -->
+
+            <section
+                class="page-section"
+                id="dataset"
+            >
+
+                <div class="page-header">
+
+                    <div>
+
+                        <div class="eyebrow">
+                            DATA MANAGEMENT
+                        </div>
+
+                        <h1>
+                            Dataset
+                        </h1>
+
+                        <p>
+                            Upload the customer review dataset
+                            for NLP analysis.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="panel upload-panel">
+
+                    <div class="upload-icon">
+
+                        <i class="fa-solid fa-cloud-arrow-up"></i>
+
+                    </div>
+
+
+                    <h2>
+                        Upload Customer Reviews
+                    </h2>
+
+
+                    <p>
+                        Upload a CSV file containing a
+                        <strong>review</strong> column.
+                    </p>
+
+
+                    <label
+                        class="file-drop"
+                        for="csvFile"
+                    >
+
+                        <i class="fa-solid fa-file-csv"></i>
+
+                        <span id="fileName">
+                            Choose CSV file
+                        </span>
+
+                        <small>
+                            CSV files only
+                        </small>
+
+                    </label>
+
+
+                    <input
+                        type="file"
+                        id="csvFile"
+                        accept=".csv"
+                        hidden
+                    >
+
+
+                    <button
+                        class="primary-button upload-button"
+                        id="analyzeButton"
+                    >
+
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+
+                        Analyze Dataset
+
+                    </button>
+
+
+                    <div
+                        id="uploadMessage"
+                        class="upload-message"
+                    ></div>
+
+                </div>
+
+
+                <div class="panel">
+
+                    <div class="panel-header">
+
+                        <div>
+
+                            <h2>
+                                Expected Dataset Format
+                            </h2>
+
+                            <p>
+                                Minimum required column
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="dataset-example">
+
+                        <div class="example-row header">
+
+                            <span>
+                                review_id
+                            </span>
+
+                            <span>
+                                customer
+                            </span>
+
+                            <span>
+                                product
+                            </span>
+
+                            <span>
+                                rating
+                            </span>
+
+                            <span>
+                                review
+                            </span>
+
+                        </div>
+
+
+                        <div class="example-row">
+
+                            <span>
+                                001
+                            </span>
+
+                            <span>
+                                Aarav
+                            </span>
+
+                            <span>
+                                Smartphone X
+                            </span>
+
+                            <span>
+                                5
+                            </span>
+
+                            <span>
+                                Excellent product!
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =====================================
+                 REVIEW ANALYZER
+            ====================================== -->
+
+            <section
+                class="page-section"
+                id="analyzer"
+            >
+
+                <div class="page-header">
+
+                    <div>
+
+                        <div class="eyebrow">
+                            NLP PLAYGROUND
+                        </div>
+
+                        <h1>
+                            Review Analyzer
+                        </h1>
+
+                        <p>
+                            Analyze an individual customer comment.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="analyzer-grid">
+
+
+                    <div class="panel">
+
+                        <div class="panel-header">
+
+                            <div>
+
+                                <h2>
+                                    Customer Review
+                                </h2>
+
+                                <p>
+                                    Enter text to analyze sentiment.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <textarea
+                            id="singleReview"
+                            class="review-textarea"
+                            placeholder="Example: I love the product, but the delivery took too long."
+                        ></textarea>
+
+
+                        <button
+                            class="primary-button"
+                            id="singleAnalyzeButton"
+                        >
+
+                            <i class="fa-solid fa-magnifying-glass-chart"></i>
+
+                            Analyze Review
+
+                        </button>
+
+                    </div>
+
+
+                    <div class="panel">
+
+                        <div class="panel-header">
+
+                            <div>
+
+                                <h2>
+                                    NLP Result
+                                </h2>
+
+                                <p>
+                                    Sentiment classification
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div
+                            id="singleResult"
+                            class="single-result"
+                        >
+
+                            <div class="empty-state">
+
+                                <i class="fa-solid fa-robot"></i>
+
+                                <p>
+                                    Enter a review and click
+                                    Analyze Review.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+</div>
+
+
+<!-- MOBILE OVERLAY -->
+
+<div
+    class="sidebar-overlay"
+    id="sidebarOverlay"
+></div>
+
+
+<script src="app.js"></script>
+
+</body>
+
+</html>
